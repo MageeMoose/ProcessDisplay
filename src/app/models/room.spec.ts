@@ -1,7 +1,7 @@
-import { Room } from './room';
+import { DetaineeModel } from './detaineeModel';
 
 describe('Room', () => {
   it('should create an instance', () => {
-    expect(new Room()).toBeTruthy();
+    expect(new DetaineeModel()).toBeTruthy();
   });
 });

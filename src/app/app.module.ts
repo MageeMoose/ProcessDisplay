@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RoomlistSectionOneComponent } from './components/roomlist-section-one/roomlist-section-one.component';
 import { RoomlistSectionTwoComponent } from './components/roomlist-section-two/roomlist-section-two.component';
 import { IncomingDetaineeComponent } from './components/incoming-detainee/incoming-detainee.component';
-import { SecurityMessureComponent } from './components/security-messure/security-messure.component';
+import { SecurityMessureComponent } from './components/security-meassure/security-messure.component';
 
 @NgModule({
   declarations: [

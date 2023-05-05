@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-security-messure',
+  selector: 'app-security-meassure',
   templateUrl: './security-messure.component.html',
   styleUrls: ['./security-messure.component.css']
 })
