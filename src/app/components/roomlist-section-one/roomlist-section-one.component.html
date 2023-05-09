@@ -1,1 +1,6 @@
-<p>roomlist-section-one works!</p>
+<div class="roomContainer">
+    <div *ngFor="let room of rooms" class="roomBox" [style.background-color]="room.backgroundColor">
+        {{room.roomNumber}}
+
+    </div>
+</div>

@@ -7,7 +7,7 @@ import { RoomListColor } from '../models/room-list-color';
   providedIn: 'root'
 })
 export class JsonroomService {
-  private roomPath = "./data/roomlistOne.json"
+  private roomPath = "assets/roomlistOne.json"
 
   constructor(private http: HttpClient) { }
 
