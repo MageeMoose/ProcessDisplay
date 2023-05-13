@@ -17,8 +17,8 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
-              "zone.js"
-              
+              "zone.js",
+              "src/global-window-fix.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -96,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

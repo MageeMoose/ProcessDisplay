@@ -1,5 +1,5 @@
 export class DetaineeModel {
-  id: string;
+  _id: string;
   _rev: string;
   roomNumber: string;
   backgroundColor: string;
@@ -12,7 +12,7 @@ export class DetaineeModel {
   isSecMes: boolean;
 
   constructor() {
-    this.id = '';
+    this._id = '';
     this._rev = '';
     this.roomNumber= '';
     this.backgroundColor = '';
