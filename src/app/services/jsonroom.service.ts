@@ -6,6 +6,9 @@ import { RoomListColor } from '../models/room-list-color';
 @Injectable({
   providedIn: 'root'
 })
+
+
+
 export class JsonroomService {
   private roomPath = "assets/roomlistOne.json"
 

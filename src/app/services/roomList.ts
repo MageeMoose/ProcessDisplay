@@ -1,4 +1,4 @@
-[
+export const roomList = [
     {
         "roomNumber": "2105:1",
         "backgroundColor": "#ff0000"
@@ -168,5 +168,3 @@
         "backgroundColor": "#FFA500"
     }
 ]
-
-
