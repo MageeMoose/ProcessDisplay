@@ -12,7 +12,15 @@ export class PounchdbService {
   constructor() {
     this.db = new PouchDB('detainee-rooms');
    }
-  async getDetainees(section: string): Promise<any>{
+  
+  async addDetainee(detainee: DetaineeModel): Promise<any>{
+    await this.db.post(detainee);
+  }
+ 
+// Returns a list of all detainees in a given section
+// section: the section to get detainees from
+// returns: a list of detainees from the given section
+async getDetainees(section: string): Promise<any>{
     const result = await this.db.allDocs({include_docs: true, attachments: true});
     const detainee: DetaineeModel[] = result.rows
       .filter(
@@ -34,7 +42,22 @@ export class PounchdbService {
           isSecMes: doc.isSecMes
         };
         return detaineeItem;
-      });
+      }).sort((a,b) => a.roomNumber > b.roomNumber ? 1 : -1);
     return detainee; 
   }
+
+// This function returns a detainee document from the database
+ async getDetaineeById(id: string): Promise<any>{
+    return await this.db.get(id);
+  }
+  async createDetainee(detainee: DetaineeModel): Promise<any>{
+    return await this.db.post(detainee);
+  }
+  async updateDetainee(detainee: DetaineeModel): Promise<any>{
+    return await this.db.put(detainee);
+  }
+  async deleteDetainee(detainee: DetaineeModel): Promise<any>{
+    return await this.db.remove(detainee);
+  }
+
 }

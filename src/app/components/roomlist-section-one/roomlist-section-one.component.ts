@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { JsonroomService } from 'src/app/services/jsonroom.service';
-import { RoomListColor } from 'src/app/models/room-list-color';
+import { PounchdbService } from 'src/app/services/pounchdb.service';
+import { DetaineeModel } from 'src/app/models/detaineeModel';
 
 @Component({
   selector: 'app-roomlist-section-one',
@@ -9,14 +9,26 @@ import { RoomListColor } from 'src/app/models/room-list-color';
 })
 
 export class RoomlistSectionOneComponent implements OnInit {
-  rooms: RoomListColor[] = [];
-
-  constructor(private jsonService: JsonroomService){}
+  rooms: DetaineeModel[] = [];
+  distplayRoomInfo: string[] = ["roomNumber", "backgroundColor", "department", "travel", "identification", "notes", "text"]; 
+     
+  constructor(
+    private pounchdbService: PounchdbService
+  ){}
   
   ngOnInit(): void {
-      this.jsonService.getRoomForSectionOne().subscribe(rooms =>{
-        this.rooms = rooms
-      })
+      this.fetchtRooomInfo();
   }
 
+  async fetchtRooomInfo(){
+    try{
+      this.rooms = await this.pounchdbService.getDetainees("section-one");
+      console.log("Fetched list for Section One",this.rooms);
+    }
+    catch(err){
+      console.log(err);
+
+    }
+    
+  }
 }

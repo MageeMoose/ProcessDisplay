@@ -26,6 +26,7 @@ export class AppComponent {
         roomList.forEach(room => {
           const detainee = new DetaineeModel();
           detainee._id = uuidv4();
+          detainee.section = room.section;
           detainee.roomNumber = room.roomNumber;
           detainee.backgroundColor = room.backgroundColor; 
           this.db.put(detainee);
