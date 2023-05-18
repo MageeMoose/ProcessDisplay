@@ -18,3 +18,14 @@
  font-size: 1vw;
  font-weight: bold;   
 }
+
+.mdc-data-table__cell{
+    font-size: var(--mdc-typography-body2-font-size, 12px);
+    font-weight: var(--mdc-typography-body2-font-weight, 600);
+    line-height: var(--mdc-typography-body2-line-height, 12px);
+    
+    height: var(--mdc-typography-body2-height, 12px);
+  }
+  .mdc-data-table__row{
+    height: var(--mdc-typography-body2-height, 18px);
+  }

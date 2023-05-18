@@ -34,6 +34,7 @@ async getDetainees(section: string): Promise<any>{
           roomNumber: doc.roomNumber,
           backgroundColor: doc.backgroundColor,
           department: doc.department,
+          language: doc.language,
           travel: doc.travel,
           section: doc.section,
           identification: doc.identification,

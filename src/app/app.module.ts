@@ -6,6 +6,8 @@ import { RoomlistSectionOneComponent } from './components/roomlist-section-one/r
 import { RoomlistSectionTwoComponent } from './components/roomlist-section-two/roomlist-section-two.component';
 import { IncomingDetaineeComponent } from './components/incoming-detainee/incoming-detainee.component';
 import { SecurityMessureComponent } from './components/security-meassure/security-messure.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { SecurityMessureComponent } from './components/security-meassure/securit
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

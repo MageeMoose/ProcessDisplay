@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+  }
+  
+  .section-one, .section-two {
+    flex-basis: 50%;
+    
+  }
+  

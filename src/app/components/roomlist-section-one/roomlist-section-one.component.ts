@@ -10,7 +10,7 @@ import { DetaineeModel } from 'src/app/models/detaineeModel';
 
 export class RoomlistSectionOneComponent implements OnInit {
   rooms: DetaineeModel[] = [];
-  distplayRoomInfo: string[] = ["roomNumber", "backgroundColor", "department", "travel", "identification", "notes", "text"]; 
+  distplayRoomInfo: string[] = ["roomNumber", "department", "language", "travel", "identification", "notes", "text"]; 
      
   constructor(
     private pounchdbService: PounchdbService

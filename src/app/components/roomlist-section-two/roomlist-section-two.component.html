@@ -1,1 +1,34 @@
-<p>roomlist-section-two works!</p>
+<div class="roomContainer">
+    <table mat-table [dataSource]="rooms">
+        <ng-container matColumnDef="roomNumber">
+            <th mat-header-cell *matHeaderCellDef> Rum </th>
+            <td mat-cell *matCellDef="let room" [style.background-color]="room.backgroundColor">{{room.roomNumber}}</td>
+        </ng-container>
+        <ng-container matColumnDef="department">
+            <th mat-header-cell *matHeaderCellDef> Myndighet </th>
+            <td mat-cell *matCellDef="let room"> {{room.department}} </td>
+        </ng-container>
+        <ng-container matColumnDef="language">
+            <th mat-header-cell *matHeaderCellDef> Språk </th>
+            <td mat-cell *matCellDef="let room"> {{room.language}} </td>
+        </ng-container>
+        <ng-container matColumnDef="travel">
+            <th mat-header-cell *matHeaderCellDef> Resa </th>
+            <td mat-cell *matCellDef="let room"> {{room.travel}} </td>
+        </ng-container>
+        <ng-container matColumnDef="identification">
+            <th mat-header-cell *matHeaderCellDef> UR-Kund </th>
+            <td mat-cell *matCellDef="let room"> {{room.identification}} </td>
+        </ng-container>
+        <ng-container matColumnDef="notes">
+            <th mat-header-cell *matHeaderCellDef> Anteckningar </th>
+            <td mat-cell *matCellDef="let room"> {{room.notes}} </td>
+        </ng-container>
+        <ng-container matColumnDef="text">
+            <th mat-header-cell *matHeaderCellDef> Fritext </th>
+            <td mat-cell *matCellDef="let room"> {{room.text}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="distplayRoomInfo"></tr>
+        <tr mat-row *matRowDef="let row; columns: distplayRoomInfo;"></tr>
+    </table>
+</div>
