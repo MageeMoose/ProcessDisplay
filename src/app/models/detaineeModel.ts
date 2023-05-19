@@ -11,6 +11,8 @@ export class DetaineeModel {
   notes: string;
   text: string
   isSecMes: boolean;
+  isVacant: boolean;
+  hasVisitor: boolean;
 
   constructor() {
     this._id = '';
@@ -25,6 +27,8 @@ export class DetaineeModel {
     this.notes = '';
     this.text = '';
     this.isSecMes = false;
+    this.isVacant = false;
+    this.hasVisitor = false;
   }
 }
 

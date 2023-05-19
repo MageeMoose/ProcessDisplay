@@ -40,7 +40,9 @@ async getDetainees(section: string): Promise<any>{
           identification: doc.identification,
           notes: doc.notes,
           text: doc.text,
-          isSecMes: doc.isSecMes
+          isSecMes: doc.isSecMes,
+          isVacant: doc.isVacant,
+          hasVisitor: doc.hasVisitor
         };
         return detaineeItem;
       }).sort((a,b) => a.roomNumber > b.roomNumber ? 1 : -1);

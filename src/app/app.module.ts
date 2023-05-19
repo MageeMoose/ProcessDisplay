@@ -8,6 +8,10 @@ import { IncomingDetaineeComponent } from './components/incoming-detainee/incomi
 import { SecurityMessureComponent } from './components/security-meassure/security-messure.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
+import { AddDetaineeDialogComponent } from './components/add-detainee-dialog/add-detainee-dialog.component';
+import { CountVacancySectionOneComponent } from './components/count-vacancy-section-one/count-vacancy-section-one.component';
+import { CountVacancySectionTwoComponent } from './components/count-vacancy-section-two/count-vacancy-section-two.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -15,13 +19,18 @@ import {MatTableModule} from '@angular/material/table';
     RoomlistSectionOneComponent,
     RoomlistSectionTwoComponent,
     IncomingDetaineeComponent,
-    SecurityMessureComponent
+    SecurityMessureComponent,
+    AddDetaineeDialogComponent,
+    CountVacancySectionOneComponent,
+    CountVacancySectionTwoComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NoopAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

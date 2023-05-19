@@ -1,9 +1,12 @@
 .container {
     display: flex;
+    height: 100%;
   }
   
   .section-one, .section-two {
     flex-basis: 50%;
+    height: 100%;
     
+    border: solid 3px #000000;
   }
   
