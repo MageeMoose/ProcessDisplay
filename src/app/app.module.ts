@@ -12,6 +12,9 @@ import { AddDetaineeDialogComponent } from './components/add-detainee-dialog/add
 import { CountVacancySectionOneComponent } from './components/count-vacancy-section-one/count-vacancy-section-one.component';
 import { CountVacancySectionTwoComponent } from './components/count-vacancy-section-two/count-vacancy-section-two.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     NoopAnimationsModule,
     MatTableModule,
     MatDialogModule,
-   
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

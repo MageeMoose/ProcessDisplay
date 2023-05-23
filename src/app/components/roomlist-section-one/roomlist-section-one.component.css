@@ -29,3 +29,8 @@
   .mdc-data-table__row{
     height: var(--mdc-typography-body2-height, 18px);
   }
+.roomNumberCell:hover{
+    cursor: pointer;
+    background-color: #e0e0e0;
+
+}

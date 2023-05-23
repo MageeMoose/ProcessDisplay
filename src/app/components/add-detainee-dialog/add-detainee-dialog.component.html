@@ -1,1 +1,22 @@
-<p>add-detainee-dialog works!</p>
+<h2 mat-dialog-title [style.background-color]="data.backgroundColor">{{data.roomNumber}}</h2>
+<form [formGroup]="detaineeForm" (ngSubmit)="onNoClick()">
+    <mat-form-field>
+      <input matInput placeholder="Myndighet" formControlName="department">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Land" formControlName="language">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Resa" formControlName="travel">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="UR-Kund" formControlName="identification">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Anteckningar" formControlName="notes">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Fritext" formControlName="text">
+    </mat-form-field>
+    <button mat-button type="submit">Uppdatera </button>
+  </form>

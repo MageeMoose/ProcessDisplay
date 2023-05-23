@@ -2,7 +2,7 @@
     <table mat-table [dataSource]="rooms">
         <ng-container matColumnDef="roomNumber">
             <th mat-header-cell *matHeaderCellDef> Rum </th>
-            <td mat-cell *matCellDef="let room" [style.background-color]="room.backgroundColor">{{room.roomNumber}}</td>
+            <td mat-cell *matCellDef="let room" class="roomNumberCell" (click)="openDetaineeInfoDialog(room)" [style.background-color]="room.backgroundColor">{{room.roomNumber}}</td>
         </ng-container>
         <ng-container matColumnDef="department">
             <th mat-header-cell *matHeaderCellDef> Myndighet </th>
