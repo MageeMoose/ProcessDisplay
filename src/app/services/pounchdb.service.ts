@@ -41,6 +41,7 @@ async getDetainees(section: string): Promise<any>{
           notes: doc.notes,
           text: doc.text,
           isSecMes: doc.isSecMes,
+          sceMesMassage: doc.sceMesMassage,
           isVacant: doc.isVacant,
           hasVisitor: doc.hasVisitor
         };

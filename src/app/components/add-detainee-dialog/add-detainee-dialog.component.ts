@@ -30,6 +30,7 @@ export class AddDetaineeDialogComponent {
         notes: [this.data.notes],
         text: [this.data.text],
         isSecMes: [this.data.isSecMes],
+        sceMesMassage: [this.data.sceMesMassage],
         isVacant: [this.data.isVacant],
         //hasVisitor: [this.data.model.hasVisitor]
      });

@@ -1,22 +1,32 @@
 <h2 mat-dialog-title [style.background-color]="data.backgroundColor">{{data.roomNumber}}</h2>
 <form [formGroup]="detaineeForm" (ngSubmit)="onNoClick()">
-    <mat-form-field>
-      <input matInput placeholder="Myndighet" formControlName="department">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Land" formControlName="language">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Resa" formControlName="travel">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="UR-Kund" formControlName="identification">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Anteckningar" formControlName="notes">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Fritext" formControlName="text">
-    </mat-form-field>
+    <div class="fieldContainer">
+      <mat-form-field class="formField" >
+        <input matInput placeholder="Myndighet" formControlName="department">
+      </mat-form-field>
+      <mat-form-field class="formField">
+        <input matInput placeholder="Land" formControlName="language">
+      </mat-form-field>
+      <mat-form-field class="formField">
+        <input matInput placeholder="Resa" formControlName="travel">
+      </mat-form-field>
+      <mat-form-field class="formField">
+        <input matInput placeholder="UR-Kund" formControlName="identification">
+      </mat-form-field>
+      <mat-form-field class="formField">
+        <input matInput placeholder="Anteckningar" formControlName="notes">
+      </mat-form-field>
+      <div>
+        <mat-form-field class="formFieldText">
+          <input matInput placeholder="Fritext" formControlName="text">
+        </mat-form-field>
+      </div>
+      <div class="toggleGroup">
+        <mat-slide-toggle formControlName="isSecMes">Special Markera</mat-slide-toggle>
+        <mat-form-field class="formFieldSec">
+          <input matInput placeholder="Special Markera Text" formControlName="secMesMessage">
+        </mat-form-field>
+      </div>
+    </div>
     <button mat-button type="submit">Uppdatera </button>
   </form>

@@ -11,6 +11,7 @@ export class DetaineeModel {
   notes: string;
   text: string
   isSecMes: boolean;
+  sceMesMassage: string;
   isVacant: boolean;
   hasVisitor: boolean;
 
@@ -27,6 +28,7 @@ export class DetaineeModel {
     this.notes = '';
     this.text = '';
     this.isSecMes = false;
+    this.sceMesMassage = '';
     this.isVacant = false;
     this.hasVisitor = false;
   }

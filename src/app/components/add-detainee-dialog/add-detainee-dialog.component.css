@@ -1,0 +1,23 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.formField {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+  
+.toggleGroup {
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.formFieldSec{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    width: 300px;
+}
+  
