@@ -7,9 +7,9 @@
     /* overflow: hidden; */
 }
 
-.roomBox{
+.roomNumberCell{
  width: 3vm;
- height: 1.5vw;
+ height: 50vw;
  display: flex;
  flex: 1 1 auto;
  justify-content: center;
@@ -20,11 +20,11 @@
 }
 
 .mdc-data-table__cell{
-    font-size: var(--mdc-typography-body2-font-size, 12px);
+    font-size: var(--mdc-typography-body2-font-size, 20px);
     font-weight: var(--mdc-typography-body2-font-weight, 600);
     line-height: var(--mdc-typography-body2-line-height, 12px);
     
-    height: var(--mdc-typography-body2-height, 12px);
+    height: var(--mdc-typography-body2-height, 30px);
   }
   .mdc-data-table__row{
     height: var(--mdc-typography-body2-height, 18px);
