@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DetaineeModel } from 'src/app/models/detaineeModel';
 import { PounchdbService } from 'src/app/services/pounchdb.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { departmentList, travelList, identificationList  } from './selection-list';
 
 @Component({
   selector: 'app-add-detainee-dialog',
@@ -12,6 +13,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class AddDetaineeDialogComponent {
   detaineeForm: FormGroup
+  departmentList = departmentList;
+  travelList = travelList;
+  identificationList = identificationList;
+
 
   constructor(public dialogRef: MatDialogRef<AddDetaineeDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DetaineeModel,

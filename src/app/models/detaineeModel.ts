@@ -8,7 +8,7 @@ export class DetaineeModel {
   travel: string;
   section: string;
   identification: string;
-  notes: string;
+  notes: string[];
   text: string
   isSecMes: boolean;
   sceMesMassage: string;
@@ -25,7 +25,7 @@ export class DetaineeModel {
     this.travel = '';
     this.section = '';
     this.identification = '';
-    this.notes = '';
+    this.notes = [];
     this.text = '';
     this.isSecMes = false;
     this.sceMesMassage = '';

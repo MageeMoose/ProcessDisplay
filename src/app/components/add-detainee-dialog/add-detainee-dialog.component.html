@@ -2,13 +2,23 @@
 <form [formGroup]="detaineeForm" (ngSubmit)="onNoClick()">
     <div class="fieldContainer">
       <mat-form-field class="formField" >
-        <input matInput placeholder="Myndighet" formControlName="department">
+        <mat-label>Myndighet</mat-label>
+        <mat-select formControlName="department">
+          <mat-option *ngFor="let department of departmentList" [value]="department">
+            {{department}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
         <input matInput placeholder="Land" formControlName="language">
       </mat-form-field>
       <mat-form-field class="formField">
-        <input matInput placeholder="Resa" formControlName="travel">
+        <mat-label>Resa</mat-label>
+        <mat-select formControlName="travel">
+          <mat-option *ngFor="let travle of travelList" [value]="travle">
+            {{travle.listName}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
         <input matInput placeholder="UR-Kund" formControlName="identification">
