@@ -26,4 +26,14 @@
     margin-left: 10px;
     width: 300px;
 }
+
+.checkboxContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.checkboxItem{
+    width: 50%;
+}
   

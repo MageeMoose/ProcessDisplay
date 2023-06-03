@@ -1,10 +1,10 @@
 import { Component, Inject} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DetaineeModel } from 'src/app/models/detaineeModel';
 import { PounchdbService } from 'src/app/services/pounchdb.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { departmentList, travelList, identificationList  } from './selection-list';
+import { departmentList, travelList, identificationList, specMes } from './selection-list';
 
 @Component({
   selector: 'app-add-detainee-dialog',
@@ -16,6 +16,7 @@ export class AddDetaineeDialogComponent {
   departmentList = departmentList;
   travelList = travelList;
   identificationList = identificationList;
+  specMes = specMes;
 
 
   constructor(public dialogRef: MatDialogRef<AddDetaineeDialogComponent>,
@@ -38,13 +39,44 @@ export class AddDetaineeDialogComponent {
         sceMesMassage: [this.data.sceMesMassage],
         isVacant: [this.data.isVacant],
         //hasVisitor: [this.data.model.hasVisitor]
+        specMesBox: new FormArray([])
      });
+
+     this.addCheckboxes();
+    }
+
+    private addCheckboxes() {
+      this.specMes.forEach((item, i) => {
+        const isChecked = this.data.notes.includes(item.listName);
+        this.specMesBox.push(this.formBuilder.control(isChecked));
+      });
+    }
+
+    get specMesBox() {
+      return this.detaineeForm.get('specMesBox') as FormArray;
     }
 
   onNoClick(): void {
-    this.pounchService.updateDetainee(this.data).then(() => {
-      this.dialogRef.close(this.data);
-    });
+    const formValue = this.detaineeForm.value;
+
+  const nostes :string[]= [];
+
+  for(let i = 0; i < this.specMesBox.length; i++){
+    if(this.specMesBox.at(i).value){
+      nostes.push(this.specMes[i].listName);
+    }
+  }
+
+  const updatedData: DetaineeModel = {
+    ...formValue,
+    notes: nostes,
+    specMesBox: this.specMesBox.value
+  };
+
+  console.log(updatedData);
+  this.pounchService.updateDetainee(updatedData).then(() => {
+    this.dialogRef.close(updatedData);
+  });
   }
 }
 

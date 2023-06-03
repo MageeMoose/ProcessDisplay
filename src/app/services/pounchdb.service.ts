@@ -29,7 +29,7 @@ async getDetainees(section: string): Promise<any>{
       (row.doc as any).section === section).map((row) =>{
         const doc = row.doc as PouchDB.Core.ExistingDocument<any>;
         const detaineeItem: DetaineeModel={
-          _id: doc.id,
+          _id: doc._id,
           _rev: doc._rev,
           roomNumber: doc.roomNumber,
           backgroundColor: doc.backgroundColor,

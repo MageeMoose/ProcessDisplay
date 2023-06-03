@@ -51,11 +51,50 @@ export const identificationList = [
     {
         "listName": "ID under åtgärd",
         "backgroundColor": "#c70606",
-        "fontColor": "#000000"
+        "fontColor": "#ffffff"
     },
     {
         "listName": "Vitt Kuvert",
         "backgroundColor": "#ffffff",
         "fontColor": "#000000"
+
+    },
+]
+
+export const specMes = [
+    {
+        "listName": "OMH-EG I SÄK.SKÅP",
+        "backgroundColor": "#1457A3",
+        "fontColor": "#ffffff"
+    },
+    {
+        "listName": "BEV. BESÖK",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
+    },
+    {
+        "listName": "BEV. RAKNING",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
+    },
+    {
+        "listName": "TILLSYN",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
+    },
+    { 
+        "listName": "AVSKILD",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
+    },
+    {
+        "listName": "SJUKHUS",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
+    },
+    {
+        "listName": "PSYK",
+        "backgroundColor": "#c70606",
+        "fontColor": "#ffffff"
     }
 ]

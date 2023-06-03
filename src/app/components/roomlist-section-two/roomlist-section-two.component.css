@@ -1,31 +1,36 @@
 .roomContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    /* flex-wrap:  wrap; */
-    height: 90vh;
-    /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  /* flex-wrap:  wrap; */
+  height: 90vh;
+  /* overflow: hidden; */
 }
 
-.roomBox{
- width: 3vm;
- height: 1.5vw;
- display: flex;
- flex: 1 1 auto;
- justify-content: center;
- align-items: center;
- border: 1px solid #000;
- font-size: 1vw;
- font-weight: bold;   
+.roomNumberCell{
+width: 3vm;
+height: 50vw;
+display: flex;
+flex: 1 1 auto;
+justify-content: center;
+align-items: center;
+border: 1px solid #000;
+font-size: 1vw;
+font-weight: bold;   
 }
 
 .mdc-data-table__cell{
-    font-size: var(--mdc-typography-body2-font-size, 12px);
-    font-weight: var(--mdc-typography-body2-font-weight, 600);
-    line-height: var(--mdc-typography-body2-line-height, 12px);
-    
-    height: var(--mdc-typography-body2-height, 12px);
-  }
-  .mdc-data-table__row{
-    height: var(--mdc-typography-body2-height, 18px);
-  }
+  font-size: var(--mdc-typography-body2-font-size, 20px);
+  font-weight: var(--mdc-typography-body2-font-weight, 600);
+  line-height: var(--mdc-typography-body2-line-height, 12px);
+  
+  height: var(--mdc-typography-body2-height, 30px);
+}
+.mdc-data-table__row{
+  height: var(--mdc-typography-body2-height, 18px);
+}
+.roomNumberCell:hover{
+  cursor: pointer;
+  background-color: #e0e0e0;
+
+}

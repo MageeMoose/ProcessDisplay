@@ -1,4 +1,4 @@
-<h2 mat-dialog-title [style.background-color]="data.backgroundColor">{{data.roomNumber}}</h2>
+<h2 mat-dialog-title [style.background-color]="data.backgroundColor" style="font-size: 40px; font-weight: bold;">{{data.roomNumber}}</h2>
 <form [formGroup]="detaineeForm" (ngSubmit)="onNoClick()">
     <div class="fieldContainer">
       <mat-form-field class="formField" >
@@ -15,13 +15,18 @@
       <mat-form-field class="formField">
         <mat-label>Resa</mat-label>
         <mat-select formControlName="travel">
-          <mat-option *ngFor="let travle of travelList" [value]="travle">
-            {{travle.listName}}
+          <mat-option *ngFor="let travel of travelList" [value]="travel.listName">
+            {{travel.listName}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
-        <input matInput placeholder="UR-Kund" formControlName="identification">
+        <mat-label>UR-Kund</mat-label>
+        <mat-select formControlName="identification">
+          <mat-option *ngFor="let id of identificationList" [value]="id.listName">
+            {{id.listName}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
         <input matInput placeholder="Anteckningar" formControlName="notes">
@@ -33,10 +38,12 @@
       </div>
       <div class="toggleGroup">
         <mat-slide-toggle formControlName="isSecMes">Special Markera</mat-slide-toggle>
-        <mat-form-field class="formFieldSec">
-          <input matInput placeholder="Special Markera Text" formControlName="secMesMessage">
-        </mat-form-field>
+        <div class="checkboxContainer">
+          <div formArrayName="specMesBox" *ngFor="let item of specMes; let i = index" class="checkboxItem">
+            <mat-checkbox [formControlName]="i">{{item.listName}}</mat-checkbox>
+          </div>
+        </div>
       </div>
     </div>
-    <button mat-button type="submit">Uppdatera </button>
+    <button mat-button (click)="onNoClick()">Uppdatera </button>
   </form>
