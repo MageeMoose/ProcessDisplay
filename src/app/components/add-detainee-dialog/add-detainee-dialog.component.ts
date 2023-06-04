@@ -17,7 +17,7 @@ export class AddDetaineeDialogComponent {
   travelList = travelList;
   identificationList = identificationList;
   specMes = specMes;
-
+  
 
   constructor(public dialogRef: MatDialogRef<AddDetaineeDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DetaineeModel,
@@ -56,7 +56,14 @@ export class AddDetaineeDialogComponent {
       return this.detaineeForm.get('specMesBox') as FormArray;
     }
 
+  isupdaing = false;
+
   onNoClick(): void {
+    if(this.isupdaing){
+      return;
+    }
+
+    this.isupdaing = true;
     const formValue = this.detaineeForm.value;
 
     const notes: string[] = [];
@@ -80,10 +87,11 @@ export class AddDetaineeDialogComponent {
         ...latestData,
         ...updatedData,
       };
-  
+      console.log("Merged Data", mergedData);
       // Then perform the update
       this.pounchService.updateDetainee(mergedData).then(() => {
         this.dialogRef.close(mergedData);
+        this.isupdaing = false;
       });
     });
   }

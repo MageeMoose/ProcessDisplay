@@ -67,7 +67,7 @@ export class RoomlistSectionOneComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((updatedRoom: DetaineeModel) => {
       console.log('The dialog was closed');
-      this.pouchdbService.updateDetainee(updatedRoom);
+      // this.pouchdbService.updateDetainee(updatedRoom);
     });
 
   }

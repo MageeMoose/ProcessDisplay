@@ -62,7 +62,7 @@ export class RoomlistSectionTwoComponent {
 
     dialogRef.afterClosed().subscribe((updatedRoom: DetaineeModel) => {
       console.log('The dialog was closed');
-      this.pounchdbService.updateDetainee(updatedRoom);
+      // this.pounchdbService.updateDetainee(updatedRoom);
     });
 
   }
