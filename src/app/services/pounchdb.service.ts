@@ -58,8 +58,44 @@ async getDetainees(section: string): Promise<any>{
     return await this.db.post(detainee);
   }
   async updateDetainee(detainee: DetaineeModel): Promise<any>{
-    return await this.db.put(detainee);
+    console.log("Detainee ID", detainee._id);
+    if (!detainee || !detainee._id) {
+      throw new Error('Detainee data is undefined or missing _id');
   }
+
+  console.log("Detainee ID", detainee._id);
+    try{
+
+      // const allRooms = await this.db.allDocs({include_docs: true, attachments: true});
+      // const foundRoom = allRooms.rows.find((row) => row.doc && (row.doc as any)._id === detainee._id);
+
+      // if(!foundRoom){
+      //   console.error("Could not find room with id", detainee._id);
+      //   return;
+      // }
+      // const room: any = foundRoom.doc;
+      const room = await this.db.get(detainee._id) as unknown as DetaineeModel;
+
+      room._rev = detainee._rev;
+      room.department = detainee.department;
+      room.language = detainee.language;
+      room.travel = detainee.travel;
+      room.identification = detainee.identification;
+      room.notes = detainee.notes;
+      room.text = detainee.text;
+      room.isSecMes = detainee.isSecMes;
+      room.sceMesMassage = detainee.sceMesMassage;
+      room.isVacant = false;
+
+      const result = await this.db.put(room);
+      console.log("Update result", result)
+      return result;
+    }catch(error){
+      console.error("Error updating room", error);
+      throw error;
+    }
+  }
+
   async deleteDetainee(detainee: DetaineeModel): Promise<any>{
     return await this.db.remove(detainee);
   }

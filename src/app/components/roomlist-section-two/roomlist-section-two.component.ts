@@ -38,15 +38,15 @@ export class RoomlistSectionTwoComponent {
 
   getColorConfigTravelList(value: string){
     const colorConfig = this.travelList.find((item) => item.listName === value);
-    console.log("Colorconfig", colorConfig);
-    console.log("Colorconfig Value", value);
+    // console.log("Colorconfig", colorConfig);
+    // console.log("Colorconfig Value", value);
     return colorConfig ? colorConfig : {backgroundColor: 'ffffff', fontColor: '#000000'};
   }
 
   getColorConfigIdentificationList(value: string){
     const colorConfig = this.identificationList.find((item) => item.listName === value);
-    console.log("Colorconfig", colorConfig);
-    console.log("Colorconfig Value", value);
+    // console.log("Colorconfig", colorConfig);
+    // console.log("Colorconfig Value", value);
     return colorConfig ? colorConfig : {backgroundColor: 'ffffff', fontColor: '#000000'};
   }
 

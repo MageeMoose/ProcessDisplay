@@ -29,9 +29,18 @@ export class AppComponent {
           detainee.section = room.section;
           detainee.roomNumber = room.roomNumber;
           detainee.backgroundColor = room.backgroundColor; 
-          this.db.put(detainee);
-        })
+          this.db.get(detainee._id).then((doc) => {
+            detainee._rev = doc._rev;
+            return this.db.put(detainee);
+        }).catch((err) => {
+            if (err.name === 'not_found') {
+              return this.db.put(detainee);
+            } else {
+              throw err;
+            }
+          });
+        });
       }
-    })
+  });
   }
 }

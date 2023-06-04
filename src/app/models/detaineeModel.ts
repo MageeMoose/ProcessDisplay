@@ -29,7 +29,7 @@ export class DetaineeModel {
     this.text = '';
     this.isSecMes = false;
     this.sceMesMassage = '';
-    this.isVacant = false;
+    this.isVacant = true;
     this.hasVisitor = false;
   }
 }

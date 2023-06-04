@@ -59,24 +59,33 @@ export class AddDetaineeDialogComponent {
   onNoClick(): void {
     const formValue = this.detaineeForm.value;
 
-  const nostes :string[]= [];
-
-  for(let i = 0; i < this.specMesBox.length; i++){
-    if(this.specMesBox.at(i).value){
-      nostes.push(this.specMes[i].listName);
+    const notes: string[] = [];
+  
+    for(let i = 0; i < this.specMesBox.length; i++){
+      if(this.specMesBox.at(i).value){
+        notes.push(this.specMes[i].listName);
+      }
     }
-  }
-
-  const updatedData: DetaineeModel = {
-    ...formValue,
-    notes: nostes,
-    specMesBox: this.specMesBox.value
-  };
-
-  console.log(updatedData);
-  this.pounchService.updateDetainee(updatedData).then(() => {
-    this.dialogRef.close(updatedData);
-  });
+  
+    const updatedData: DetaineeModel = {
+      ...formValue,
+      notes: notes,
+      specMesBox: this.specMesBox.value
+    };
+  
+    // Fetch the most recent version of the document before updating
+    this.pounchService.getDetainees(updatedData._id).then((latestData: DetaineeModel) => {
+      // Merge the latest data with the updated data
+      const mergedData: DetaineeModel = {
+        ...latestData,
+        ...updatedData,
+      };
+  
+      // Then perform the update
+      this.pounchService.updateDetainee(mergedData).then(() => {
+        this.dialogRef.close(mergedData);
+      });
+    });
   }
 }
 
