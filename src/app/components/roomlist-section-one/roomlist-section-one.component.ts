@@ -14,7 +14,7 @@ import { departmentList, travelList, identificationList, specMes } from '../add-
 
 export class RoomlistSectionOneComponent implements OnInit {
   rooms: DetaineeModel[] = [];
-  distplayRoomInfo: string[] = ["roomNumber", "department", "language", "travel", "identification", "text"]; 
+  distplayRoomInfo: string[] = ["roomNumber", "department", "country", "travel", "identification", "text"]; 
   departmentList = departmentList;
   travelList = travelList;
   identificationList = identificationList;

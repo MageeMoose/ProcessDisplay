@@ -34,7 +34,7 @@ async getDetainees(section: string): Promise<any>{
           roomNumber: doc.roomNumber,
           backgroundColor: doc.backgroundColor,
           department: doc.department,
-          language: doc.language,
+          country: doc.country,
           travel: doc.travel,
           section: doc.section,
           identification: doc.identification,
@@ -80,7 +80,7 @@ async getDetainees(section: string): Promise<any>{
       console.log("Rev before the update", detainee._rev);
       room._rev = detainee._rev;
       room.department = detainee.department;
-      room.language = detainee.language;
+      room.country = detainee.country;
       room.travel = detainee.travel;
       room.identification = detainee.identification;
       room.notes = detainee.notes;

@@ -12,7 +12,7 @@ import { departmentList, travelList, identificationList, specMes } from '../add-
 })
 export class RoomlistSectionTwoComponent {
   rooms: DetaineeModel[] = [];
-  distplayRoomInfo: string[] = ["roomNumber", "department", "language", "travel", "identification", "text"]; 
+  distplayRoomInfo: string[] = ["roomNumber", "department", "country", "travel", "identification", "text"]; 
   departmentList = departmentList;
   travelList = travelList;
   identificationList = identificationList;
@@ -29,7 +29,7 @@ export class RoomlistSectionTwoComponent {
   async fetchtRooomInfo(){
     try{
       this.rooms = await this.pounchdbService.getDetainees("section-two");
-      console.log("Fetched list for Section One",this.rooms);
+      console.log("Fetched list for Section Two",this.rooms);
     }
     catch(err){
       console.log(err);

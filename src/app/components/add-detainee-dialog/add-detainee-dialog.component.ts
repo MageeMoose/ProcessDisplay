@@ -29,7 +29,7 @@ export class AddDetaineeDialogComponent {
         roomNumber: [this.data.roomNumber],
         backgroundColor: [this.data.backgroundColor],
         department: [this.data.department],
-        language: [this.data.language],
+        country: [this.data.country],
         travel: [this.data.travel],
         section: [this.data.section],
         identification: [this.data.identification],

@@ -10,9 +10,6 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
-        <input matInput placeholder="Land" formControlName="language">
-      </mat-form-field>
-      <mat-form-field class="formField">
         <mat-label>Resa</mat-label>
         <mat-select formControlName="travel">
           <mat-option *ngFor="let travel of travelList" [value]="travel.listName">
@@ -29,7 +26,7 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field class="formField">
-        <input matInput placeholder="Anteckningar" formControlName="notes">
+        <input matInput placeholder="Land" formControlName="country">
       </mat-form-field>
       <div>
         <mat-form-field class="formFieldText">

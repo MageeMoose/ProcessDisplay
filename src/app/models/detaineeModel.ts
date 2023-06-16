@@ -4,7 +4,7 @@ export class DetaineeModel {
   roomNumber: string;
   backgroundColor: string;
   department: string;
-  language: string;
+  country: string;
   travel: string;
   section: string;
   identification: string;
@@ -21,7 +21,7 @@ export class DetaineeModel {
     this.roomNumber= '';
     this.backgroundColor = '';
     this.department = '';
-    this.language = '';
+    this.country = '';
     this.travel = '';
     this.section = '';
     this.identification = '';
