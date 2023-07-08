@@ -19,25 +19,18 @@ export class CountVacancySectionOneComponent implements OnInit {
   constructor(private db: PounchdbService ) {}
 
   ngOnInit(){
-    this.db.getDetainees('section-one')
-      .then((detanees: DetaineeModel[]) => {
-        this.vacantCountSectionOne = detanees.filter((d: DetaineeModel) => d.isVacant).length;
-      })
-    this.db.getDetainees('section-two')
-      .then((detanees: DetaineeModel[]) => {
-        this.vacantCountSectionTwo = detanees.filter((d: DetaineeModel) => d.isVacant).length;
-      }) 
-    this.db.getDetainees('section-one')
-      .then((detanees: DetaineeModel[]) => {
-        this.noVacantCountSectionOne = detanees.filter((d: DetaineeModel) => !d.isVacant).length;
-      })
+    Promise.all([
+      this.db.getDetainees('section-one'),
       this.db.getDetainees('section-two')
-      .then((detanees: DetaineeModel[]) => {
-        this.noVacantCountSectionTwo = detanees.filter((d: DetaineeModel) => !d.isVacant).length;
-      })
+    ]).then(([sectionOneDetainees, sectionTwoDetainees]) =>{
+      this.vacantCountSectionOne = sectionOneDetainees.filter((d: DetaineeModel) => d.isVacant).length;
+      this.vacantCountSectionTwo = sectionTwoDetainees.filter((d: DetaineeModel) => d.isVacant).length;
       
+      this.noVacantCountSectionOne = sectionOneDetainees.filter((d: DetaineeModel) => !d.isVacant).length;
+      this.noVacantCountSectionTwo = sectionTwoDetainees.filter((d: DetaineeModel) => !d.isVacant).length;
+
       this.vacantCountSectionTotal = this.vacantCountSectionOne + this.vacantCountSectionTwo;
       this.noVacantCountSectionTotal = this.noVacantCountSectionOne + this.noVacantCountSectionTwo;
+    });
   }
-
 }
